@@ -304,13 +304,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem; /* <-- SPACE BETWEEN THE CARDS */
+  gap: 8rem; /* <-- SPACE BETWEEN THE CARDS */
   flex-wrap: wrap; /* <-- makes it responsive on small screens */
 }
 
 .skill-card {
-  width: 400px;          /* bigger width */
-  height: 520px;         /* taller height */
+  width: 485px;          /* bigger width */
+  height: 550px;         /* taller height */
   padding: 3.5rem 3rem;  /* more padding */
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
