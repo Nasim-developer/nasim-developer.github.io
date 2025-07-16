@@ -3,9 +3,10 @@
   --color-bg: #ffffff;
   --color-text: #000000;
   --color-accent: rgb(192 53 64);
-  --color-gary-1: #f5f5f5;
-  --color-gary-2: #e0e0e0;
-  --color-gary-3: #777777;
+  --color-soft-bg: #f7f7f7;
+  --color-border: #e0e0e0;
+  --color-accent-dark: #85001c;
+  --color-gray-light: #cccccc;
 
   /* Typography */
   --font-family: "Poppins", sans-serif;
@@ -83,11 +84,12 @@ body {
   text-decoration: none;
   color: var(--color-text);
   font-weight: 500;
-  transform: opacity 0.2s;
+  /* transform:  0.2s; */
+  transition: all 0.2s;
 }
 
 .nav-links a:hover {
-  opacity: 0.6;
+  color: var(--color-accent);
 }
 
 /* Hero Section */
@@ -208,7 +210,7 @@ body {
 
 .about {
   padding: 5rem 2rem;
-  background-color: var(--color-gary-1); /* light gray bg for contrast */
+  background: linear-gradient(135deg, #f7f7f7 0%, #e0e0e0 100%);
   color: var(--color-text);
   height: 100vh;
   display: flex;
@@ -223,18 +225,39 @@ body {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--color-accent);
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 4px;
+  background: var(--color-accent);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .about-text {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  /* font-size: 1rem; */
+  /* line-height: 1.8; */
+  /* margin-bottom: 1.5rem; */
   color: var(--color-text);
+
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-download,
@@ -255,4 +278,96 @@ body {
 .btn-download:hover {
   background-color: rgb(225, 29, 72); /* a brighter red */
   transform: scale(1.05);
+}
+
+
+/* Skills Section  */
+
+.skills {
+  height: 100vh;
+  padding: 3rem 2rem;
+  background-color: var(--color-soft-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-title {
+  font-size: 3rem;
+  color: var(--color-accent);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem; /* <-- SPACE BETWEEN THE CARDS */
+  flex-wrap: wrap; /* <-- makes it responsive on small screens */
+}
+
+.skill-card {
+  width: 400px;          /* bigger width */
+  height: 520px;         /* taller height */
+  padding: 3.5rem 3rem;  /* more padding */
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .skill-description {
+  font-size: 1.2rem;     /* 
+  line-height: 1.7;
+  padding: 0 1rem;
+  text-align: center;
+} */
+.skill-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+  font-size: 6.5rem;
+  color: var(--color-accent);
+  margin-bottom: .5rem;
+}
+
+.skill-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.skill-level {
+  height: 100%;
+  width: 0;
+  background-color: var(--color-accent);
+  border-radius: 6px;
+  transition: width 1.5s ease-in-out;
+}
+
+.skill-description {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--color-text);
+  line-height: 1.7;
+  padding: 0 1rem;
 }
