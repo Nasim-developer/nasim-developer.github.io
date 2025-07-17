@@ -232,6 +232,7 @@ body {
   letter-spacing: 0.05em;
   position: relative;
   padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 .section-title::after {
@@ -370,4 +371,80 @@ body {
   color: var(--color-text);
   line-height: 1.7;
   padding: 0 1rem;
+}
+
+/* Projects Sectoion  */
+
+.projects {
+  padding: 5rem 2rem;
+  background: var(--color-bg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-box {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+.project-box:hover .project-img {
+  transform: translateY(-10px); 
+}
+
+.project-img {
+  position: relative;
+  height: 520px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  overflow: visible;
+  transition: transform 0.4s ease;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  border-radius: 1em;
+}
+
+.project-img:hover .project-overlay { 
+  opacity: 1;
+}
+
+.project-name {
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-tag {
+  position: absolute;
+  top: -.480rem;      
+  right: -1.2rem; 
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: rotate(18deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  border-radius: 4px;
+  pointer-events: none;
 }
